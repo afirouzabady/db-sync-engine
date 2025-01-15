@@ -1,3 +1,4 @@
+import os
 from sqlalchemy import create_engine, event, Table, MetaData, Column, Integer, String, DateTime
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
@@ -7,9 +8,9 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Database configurations
-PRIMARY_DB_URL = "postgresql+psycopg2://user:password@localhost/primary_db"
-SECONDARY_DB_URL = "postgresql+psycopg2://user:password@localhost/secondary_db"
+# Database configurations from environment variables
+PRIMARY_DB_URL = os.getenv("PRIMARY_DB_URL", "postgresql+psycopg2://user:password@localhost/primary_db")
+SECONDARY_DB_URL = os.getenv("SECONDARY_DB_URL", "postgresql+psycopg2://user:password@localhost/secondary_db")
 
 # Create engines for both databases
 primary_engine = create_engine(PRIMARY_DB_URL)
