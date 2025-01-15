@@ -87,5 +87,5 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ## Author
 
-Created by [Your Name](https://github.com/your-profile).
+Created by [aidin](https://github.com/afirouzabady).
 
